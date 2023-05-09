@@ -8,7 +8,13 @@ class Person extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: const Text('Pessoa')),
+        appBar: AppBar(title: const Text('Pessoa'), actions: [
+          IconButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/cart');
+              }, icon: const Icon(Icons.shopping_cart))
+          ,
+        ]),
         body: Center(
           child: Column(children: [
             Text("Pessoa"),
