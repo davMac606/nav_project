@@ -8,10 +8,18 @@ class Cart extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Carrinho')
-      ),
-      body: Center(child: Column(children: [Text("Carrinho")]),)
-    );
+        appBar: AppBar(title: const Text('Carrinho')),
+        body: Center(
+          child: Column(
+            children: [
+              Text("Carrinho"),
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  child: const Text("Voltar"))
+            ],
+          ),
+        ));
   }
 }

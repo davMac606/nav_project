@@ -8,12 +8,16 @@ class Person extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
-    
-      appBar: AppBar(
-        title: const Text('Pessoa')
-      ),
-      body: Center(child: Column(children: [Text("Pessoa")]),)
-    );
+        appBar: AppBar(title: const Text('Pessoa')),
+        body: Center(
+          child: Column(children: [
+            Text("Pessoa"),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                child: const Text("Voltar"))
+          ]),
+        ));
   }
 }

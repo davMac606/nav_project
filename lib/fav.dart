@@ -8,10 +8,16 @@ class Favorite extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Favoritos')
-      ),
-      body: Center(child: Column(children: [Text("Favoritos")]),)
-    );
+        appBar: AppBar(title: const Text('Favoritos')),
+        body: Center(
+          child: Column(children: [
+            Text("Favoritos"),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                child: const Text("Voltar"))
+          ]),
+        ));
   }
 }
