@@ -23,7 +23,7 @@ class Person extends StatelessWidget {
                   Navigator.pop(context);
                 },
                 child: const Text("Voltar"))
-          ]),
+         ]),
         ));
   }
 }
