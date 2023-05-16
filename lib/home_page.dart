@@ -3,6 +3,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:nav_project/person.dart';
+import 'package:nav_project/shopping.dart';
+
+import 'package:nav_project/fav.dart';
 
 class MyWidget extends StatefulWidget {
   const MyWidget({super.key});
@@ -18,12 +22,18 @@ class _MyWidgetState extends State<MyWidget> {
 
 int _indice = 0;
 
+List<Widget> _telas = <Widget>[
+ Person(),
+ Cart(),
+Favorite(),
+];    
+
 //void para mudar o estado do indice
 void _onItemTapped(int index){
   setState(() {
     _indice = index;
   });
-  switch (_indice) {
+  /*switch (_indice) {
     case 0:
       Navigator.pushNamed(context, '/person');
       break;
@@ -33,7 +43,7 @@ void _onItemTapped(int index){
     case 2:
       Navigator.pushNamed(context, '/favorite');
       break;
-  }
+  }*/
 }
 
 
@@ -57,12 +67,16 @@ void _onItemTapped(int index){
         ],
       ), 
       // ignore: prefer_const_literals_to_create_immutables
+
+      body: _telas [_indice],
+
       bottomNavigationBar: BottomNavigationBar(
         
         currentIndex: _indice,
         onTap: _onItemTapped,
         
         
+        // ignore: prefer_const_literals_to_create_immutables
         items: [
         BottomNavigationBarItem(icon: Icon(Icons.person), label: "Person",),
         BottomNavigationBarItem(icon: Icon(Icons.shopping_cart), label: "Cart",),
